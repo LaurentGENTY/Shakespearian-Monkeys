@@ -18,6 +18,7 @@ Objectif de ce projet :
 	 * Autres versions sur les autres branches du git
 	 * Compiler avec ./project fichier.txt -s seed -t turns
 	 * Output sous forme : texte aléatoire... puis statistiques dessus
+	 * créer un dossier input/ à la racine du projet et y insérer les fichiers de textes que l'on souhaite utiliser
 
 ----------------------------------
 
@@ -45,6 +46,8 @@ Fichiers :
 # Installation
 
 Pour installer le programme rien de plus simple : il vous suffit de simplement clone le dossier sur votre machine locale et de compiler (cf. ci-après). Ou alors vous télécharger le version finale que nous avon rendu le 14 décembre.
+
+Après avoir effectué cela, vous devrez créer un dossier ```input/``` à la racine du projet et y insérer les fichiers tests en format ``` .txt ``` que nous choisirons lors de la compilation du projet.
 
 ----------------------------------
 
