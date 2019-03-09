@@ -1,23 +1,6 @@
 !!! Shakespearian Monkeys !!!
 
-     _...._
-   .-.     /
-  /o.o\ ):.\
-  \   / `- .`--._
-  // /            `-.
- '...\     .         `.
-  `--''.    '          `.
-      .'   .'            `-.
-   .-'    /`-.._            \
- .'    _.'      :      .-'"'/
-| _,--`       .'     .'    /
-\ \          /     .'     /
- \///        |    ' |    /
-             \   (  `.   ``-.
-              \   \   `._    \
-            _.-`   )    .'    )
-            `.__.-'  .-' _-.-'
-                     `.__,'
+Tous droits réservés :  Laurent GENTY ; Florian MORNET
 
 Ce projet a été réalisé durant le premier semestre à l'ENSEIRB-Matmeca dans le cadre de notre formation en tant qu'ingénieur en informatique. Il vient s'intégrer durant notre formation au lanage C et en algorithmie.
 
@@ -29,21 +12,24 @@ Objectif de ce projet :
 
 ----------------------------------
 
-Too Long ; Didn't Read :
-    	 * Version rendue : Achievement n°1 (version du master, version la plus avancée dans le projet fonctionnelle)
+# Too Long ; Didn't Read
+
+	 * Version rendue : Achievement n°1 (version du master, version la plus avancée dans le projet fonctionnelle)
 	 * Autres versions sur les autres branches du git
 	 * Compiler avec ./project fichier.txt -s seed -t turns
 	 * Output sous forme : texte aléatoire... puis statistiques dessus
 
 ----------------------------------
 
-* Pré-requis
+# Pré-requis
+
 Il vous faut un compilateur C : GCC... normalement ça va.
 Convention std=c99
 
 ----------------------------------
 
-* Rendu
+# Rendu
+
 La version rendue est la version finale du dernier achievement fonctionnel sur master : à savoir l'achievement numéro 1. Cependant, afin de gestionner notre projet, nous avons choisi d'utiliser les branches de Git et non pas de créer plusieurs dossiers c'est donc pourquoi si jamais vous souhaitez aller voir le code correspondant à la version de base ou bien l'avancement des autres achievements (en l'occurrence, achievement 2), il vous suffit tout simplement de naviguer entre les branches du Git (dans lesquels il y aura les fichiers des différentes versions : Makefile, ...).
 
 Fichiers :
@@ -56,12 +42,14 @@ Fichiers :
 
 ----------------------------------
 
-* Installation
+# Installation
+
 Pour installer le programme rien de plus simple : il vous suffit de simplement clone le dossier sur votre machine locale et de compiler (cf. ci-après). Ou alors vous télécharger le version finale que nous avon rendu le 14 décembre.
 
 ----------------------------------
 
-* Compilation
+# Compilation
+
 Afin de compiler le programme il vous faut au préalable un fichier rempli de chaînes de caractères (pas forcément un fichier .txt, tout marche!). Afin de pouvoir compiler le projet vous devrez utiliser les commandes suivantes :
 
      * make clean : clean le directory (si cela n'a pas déjà été fait par nos soins)
@@ -76,7 +64,8 @@ Ces différentes options et le fichier peuvent être placés dans n'importe quel
 
 ----------------------------------
 
-* Output
+# Output
+
 Dans la version rendue, donc achievement 1, notre rendu ressemble à cela :
 
 the riper should ; from fairest . from fairest creatures we desire increase that thereby beauty's rose might never die but as the riper should by time decease his tender heir might never . should by time : fresh ornament and only herald to thine own bright eyes feed'st thy light's flame with self-substantial fuel making a famine where abundance . feed'st thy light's flame with self-substantial fuel making a famine where abundance lies thy light's flame ; a !
@@ -100,12 +89,14 @@ ATTENTION : lorsque l'on souhaite régler le nombre de tours avec l'option -t, v
 
 ----------------------------------
 
-* Todo
+# Todo
+
 Nous ne sommes malheureusement pas arrivé bien loin dans l'achievement 2. En effet nous nous étions concentré sur l'élaboration d'un code propre et fonctionnel. Cependant dans l'achievement 2 il nous reste à faire en sorte que les singes se réveillent à la fin d'une phrase mais aussi qu'ils lisent chacun un texte bie propre et non pas une suite de mot depuis la même file.
 
 ----------------------------------
 
-* Contributeurs
+# Contributeurs
+
 Coutributeurs courants :
 	      * Laurent Genty
 	      * Florian Mornet
