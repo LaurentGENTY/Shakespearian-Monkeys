@@ -23,8 +23,7 @@ Objectif de ce projet :
 
 # Pré-requis
 
-Il vous faut un compilateur C : GCC... normalement ça va.
-Convention std=c99
+Il vous faut un compilateur C : GCC... normalement ça va. Avec une convention std=c99
 
 ----------------------------------
 
@@ -33,6 +32,7 @@ Convention std=c99
 La version rendue est la version finale du dernier achievement fonctionnel sur master : à savoir l'achievement numéro 1. Cependant, afin de gestionner notre projet, nous avons choisi d'utiliser les branches de Git et non pas de créer plusieurs dossiers c'est donc pourquoi si jamais vous souhaitez aller voir le code correspondant à la version de base ou bien l'avancement des autres achievements (en l'occurrence, achievement 2), il vous suffit tout simplement de naviguer entre les branches du Git (dans lesquels il y aura les fichiers des différentes versions : Makefile, ...).
 
 Fichiers :
+
 	 * achiev1.c (ou autre version) : main
 	 * code source : cell, queue...
 	 * tests/ : dossier test
@@ -58,9 +58,13 @@ Afin de compiler le programme il vous faut au préalable un fichier rempli de ch
 
 Afin de bien comprendre la commande ci-dessus, il faut impérativement que vous mettiez en argument un fichier. En effet, si vous ne le faites pas, alors le jeu se terminera directement et vous affichera un message "Usage" afin de vous rappelez comment utiliser le programme.
 Afin de diversifier un peu, nous avons rajouter deux options :
+
      - s : correspondant à la seed permettant de générer des nombres aléatoires
      - t : correspondant au nombre de tours que l'on souhaite
-Ces différentes options et le fichier peuvent être placés dans n'importe quel ordre à condition que le chiffre que l'on souhaite pour l'option soit placée juste après l'option (par exemple : nous souhaitons la seed 42 et 300 tours, nous ne pouvons pas compiler comme ceci : ./project bla.txt -s -t 42 300).
+     
+Ces différentes options et le fichier peuvent être placés dans n'importe quel ordre à condition que le chiffre que l'on souhaite pour l'option soit placée juste après l'option (par exemple : nous souhaitons la seed 42 et 300 tours, nous ne pouvons pas compiler comme ceci :
+
+	./project bla.txt -s -t 42 300).
 
 ----------------------------------
 
@@ -68,6 +72,7 @@ Ces différentes options et le fichier peuvent être placés dans n'importe quel
 
 Dans la version rendue, donc achievement 1, notre rendu ressemble à cela :
 
+```
 the riper should ; from fairest . from fairest creatures we desire increase that thereby beauty's rose might never die but as the riper should by time decease his tender heir might never . should by time : fresh ornament and only herald to thine own bright eyes feed'st thy light's flame with self-substantial fuel making a famine where abundance . feed'st thy light's flame with self-substantial fuel making a famine where abundance lies thy light's flame ; a !
 [...]
 Max turns reached: end of the game
@@ -79,13 +84,17 @@ Minimal occs : 1
 from(1) | 
 Maximal occs : 5
 thy(5) | 
+```
 
 Dans un premier temps nous avons l'imprimeur qui écrit dans le terminal les phrases construites par son écrivain et un résumé de ce qu'il s'est passé :
+
      * si le nombre de tours maximum a été atteint
      * des statistiques sur les mots qui ont été lus, affichés, ...
      * des statistiques sur le minimum et le maximum d'occurrences
 
-ATTENTION : lorsque l'on souhaite régler le nombre de tours avec l'option -t, veuillez à ne pas mettre des chiffres trop grands. En effet, soit il n'y aura pas assez de mémoire et selon la taille du fichier, le jeu se terminera après plus ou moins de temps. Mais aussi, il est possible que sur la forge, la limite de caractères soit atteinte et donc qu'il y ait des erreurs.
+ATTENTION :
+
+lorsque l'on souhaite régler le nombre de tours avec l'option -t, veuillez à ne pas mettre des chiffres trop grands. En effet, soit il n'y aura pas assez de mémoire et selon la taille du fichier, le jeu se terminera après plus ou moins de temps. Mais aussi, il est possible que sur la forge, la limite de caractères soit atteinte et donc qu'il y ait des erreurs.
 
 ----------------------------------
 
@@ -98,5 +107,6 @@ Nous ne sommes malheureusement pas arrivé bien loin dans l'achievement 2. En ef
 # Contributeurs
 
 Coutributeurs courants :
+
 	      * Laurent Genty
 	      * Florian Mornet
