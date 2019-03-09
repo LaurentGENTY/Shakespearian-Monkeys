@@ -1,0 +1,20 @@
+# ignore emacs auto-save files
+\#*#
+
+# ignore compiled project
+/project
+/tests/test-*
+!/tests/test-*.c
+# ignore object files
+*.o
+/input/*
+.nfs*
+/temp/
+res/*
+TAGS
+rapport/rapport.log
+rapport/rapport.aux
+rapport/rapport.out
+rapport/rapport.toc
+rapport/rapport.lof
+
