@@ -1,115 +1,54 @@
-!!! Shakespearian Monkeys !!!
+# Shakespearian Monkeys
 
-Tous droits réservés :  Laurent GENTY ; Florian MORNET
+A **random text generator in C**: a team of "monkeys" reads an existing text, builds word statistics, and writes new pseudo-Shakespearian text from them.
 
-Ce projet a été réalisé durant le premier semestre à l'ENSEIRB-Matmeca dans le cadre de notre formation en tant qu'ingénieur en informatique. Il vient s'intégrer durant notre formation au lanage C et en algorithmie.
+> School project, ENSEIRB-MATMECA (1st semester), by Laurent Genty and Florian Mornet. Report: [`rapport_shakespearia_monkeys.pdf`](rapport_shakespearia_monkeys.pdf) (French).
 
-Objectif de ce projet :
-	 * réaliser une reproduction de texte déjà existant
-	 * générer du texte aléatoire à partir de texte déjà existant
-	 * gérer des structures en C
-	 * gérer des listes chaînées
+## How it works
 
-----------------------------------
+Each monkey has one job, and they run turn by turn:
 
-# Too Long ; Didn't Read
+- **Reader**: reads words from the input file into a shared queue.
+- **Statistician**: counts word occurrences.
+- **Writer**: picks words from the queue to build sentences.
+- **Printer**: prints the sentences and the final statistics.
 
-	 * Version rendue : Achievement n°1 (version du master, version la plus avancée dans le projet fonctionnelle)
-	 * Autres versions sur les autres branches du git
-	 * Compiler avec ./project fichier.txt -s seed -t turns
-	 * Output sous forme : texte aléatoire... puis statistiques dessus
-	 * créer un dossier input/ à la racine du projet et y insérer les fichiers de textes que l'on souhaite utiliser
+Everything is built on hand-written **linked lists and queues** in C99.
 
-----------------------------------
-
-# Pré-requis
-
-Il vous faut un compilateur C : GCC... normalement ça va. Avec une convention std=c99
-
-----------------------------------
-
-# Rendu
-
-La version rendue est la version finale du dernier achievement fonctionnel sur master : à savoir l'achievement numéro 1. Cependant, afin de gestionner notre projet, nous avons choisi d'utiliser les branches de Git et non pas de créer plusieurs dossiers c'est donc pourquoi si jamais vous souhaitez aller voir le code correspondant à la version de base ou bien l'avancement des autres achievements (en l'occurrence, achievement 2), il vous suffit tout simplement de naviguer entre les branches du Git (dans lesquels il y aura les fichiers des différentes versions : Makefile, ...).
-
-Fichiers :
-
-	 * achiev1.c (ou autre version) : main
-	 * code source : cell, queue...
-	 * tests/ : dossier test
-	 * Makefile
-	 * input/ : jeu de test pour le programme
-	 * rapport/ : rapport pdf + latex
-
-----------------------------------
-
-# Installation
-
-Pour installer le programme rien de plus simple : il vous suffit de simplement clone le dossier sur votre machine locale et de compiler (cf. ci-après). Ou alors vous télécharger le version finale que nous avon rendu le 14 décembre.
-
-Après avoir effectué cela, vous devrez créer un dossier ```input/``` à la racine du projet et y insérer les fichiers tests en format ``` .txt ``` que nous choisirons lors de la compilation du projet.
-
-----------------------------------
-
-# Compilation
-
-Afin de compiler le programme il vous faut au préalable un fichier rempli de chaînes de caractères (pas forcément un fichier .txt, tout marche!). Afin de pouvoir compiler le projet vous devrez utiliser les commandes suivantes :
-
-     * make clean : clean le directory (si cela n'a pas déjà été fait par nos soins)
-     * make : compiler l'ensemble des dépendances et créer les fichiers objets adéquats
-     * ./project fichier.txt <-s:seed> <-t:number of turns>
-
-Afin de bien comprendre la commande ci-dessus, il faut impérativement que vous mettiez en argument un fichier. En effet, si vous ne le faites pas, alors le jeu se terminera directement et vous affichera un message "Usage" afin de vous rappelez comment utiliser le programme.
-Afin de diversifier un peu, nous avons rajouter deux options :
-
-     - s : correspondant à la seed permettant de générer des nombres aléatoires
-     - t : correspondant au nombre de tours que l'on souhaite
-     
-Ces différentes options et le fichier peuvent être placés dans n'importe quel ordre à condition que le chiffre que l'on souhaite pour l'option soit placée juste après l'option (par exemple : nous souhaitons la seed 42 et 300 tours, nous ne pouvons pas compiler comme ceci :
-
-	./project bla.txt -s -t 42 300).
-
-----------------------------------
-
-# Output
-
-Dans la version rendue, donc achievement 1, notre rendu ressemble à cela :
+## Example output
 
 ```
-the riper should ; from fairest . from fairest creatures we desire increase that thereby beauty's rose might never die but as the riper should by time decease his tender heir might never . should by time : fresh ornament and only herald to thine own bright eyes feed'st thy light's flame with self-substantial fuel making a famine where abundance . feed'st thy light's flame with self-substantial fuel making a famine where abundance lies thy light's flame ; a !
-[...]
+the riper should ; from fairest . from fairest creatures we desire increase that thereby beauty's rose might never die ...
 Max turns reached: end of the game
 [ 1500 turns passed ]
 Number of words read: 83
 Number of different words: 65
 Number of words printed: 645
 Minimal occs : 1
-from(1) | 
+from(1) |
 Maximal occs : 5
-thy(5) | 
+thy(5) |
 ```
 
-Dans un premier temps nous avons l'imprimeur qui écrit dans le terminal les phrases construites par son écrivain et un résumé de ce qu'il s'est passé :
+## Getting started
 
-     * si le nombre de tours maximum a été atteint
-     * des statistiques sur les mots qui ont été lus, affichés, ...
-     * des statistiques sur le minimum et le maximum d'occurrences
+Requirements: `gcc` (C99), `make`.
 
-ATTENTION :
+```bash
+make
+./project input/sonnet.txt -s 42 -t 300   # -s: random seed, -t: number of turns
+```
 
-lorsque l'on souhaite régler le nombre de tours avec l'option -t, veuillez à ne pas mettre des chiffres trop grands. En effet, soit il n'y aura pas assez de mémoire et selon la taille du fichier, le jeu se terminera après plus ou moins de temps. Mais aussi, il est possible que sur la forge, la limite de caractères soit atteinte et donc qu'il y ait des erreurs.
+Any text file works as input. Keep `-t` reasonable: memory use grows with the number of turns.
 
-----------------------------------
+## Tests
 
-# Todo
+```bash
+make test
+```
 
-Nous ne sommes malheureusement pas arrivé bien loin dans l'achievement 2. En effet nous nous étions concentré sur l'élaboration d'un code propre et fonctionnel. Cependant dans l'achievement 2 il nous reste à faire en sorte que les singes se réveillent à la fin d'une phrase mais aussi qu'ils lisent chacun un texte bie propre et non pas une suite de mot depuis la même file.
+Unit tests cover the queue, I/O and each monkey (reader, writer, printer, statistician).
 
-----------------------------------
+## Status
 
-# Contributeurs
-
-Coutributeurs courants :
-
-	      * Laurent Genty
-	      * Florian Mornet
+`master` contains achievement 1 (fully working). Achievement 2 (monkeys waking up at sentence ends, one text per monkey) was started on other branches but not finished.
